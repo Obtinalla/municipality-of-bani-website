@@ -50,6 +50,8 @@
         </div>
       </nav>
 
+      
+
 
       <div id="carouselExampleCaptions" class="carousel slide">
         <div class="carousel-indicators">
@@ -226,7 +228,7 @@
 
       <div class="col">
         <div class="card shadow-sm">
-          <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="https://scontent.fcrk2-2.fna.fbcdn.net/v/t39.30808-6/408114571_851792583623071_7098076785777358443_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeF30QV2EhwWwHRwP6O6G2nqw7OV_mfpglzDs5X-Z-mCXEXA2ZuPlK3q3vr01BtiCobENpya9gvc0_vg6yOc7lhO&_nc_ohc=_JNkfySs7yoAX-JYGfu&_nc_ht=scontent.fcrk2-2.fna&oh=00_AfDdIQLqmUhkdOI-hRHBEb-HL8MuXrZfagsWyB9ZN8V6ig&oe=6575EE1E" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></img>
+          <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="https://scontent.fcrk2-2.fna.fbcdn.net/v/t39.30808-6/408114571_851792583623071_7098076785777358443_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeF30QV2EhwWwHRwP6O6G2nqw7OV_mfpglzDs5X-Z-mCXEXA2ZuPlK3q3vr01BtiCobENpya9gvc0_vg6yOc7lhO&_nc_ohc=QGgdCD_sYuwAX-fp9Vc&_nc_ht=scontent.fcrk2-2.fna&oh=00_AfAFYLu7CzjiQxBJ6X3dDH7LFL7lyZYjFTlsz7UsenX3fw&oe=657BDCDE" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></img>
           <div class="card-body">
             <p class="card-text">𝗧𝗼𝘄𝗻 𝗙𝗶𝗲𝘀𝘁𝗮 𝟮𝟬𝟮𝟯 𝗚𝗿𝗮𝗻𝗱 𝗣𝗮𝗿𝗮𝗱𝗲</p>
             <div class="d-flex justify-content-between align-items-center">
@@ -363,20 +365,21 @@
         <div class="row">
           <div class="col-md-12">
             <div class="mb-3">
-              <input type="text" class="form-control" required placeholder="Enter your Fullname">
+              <input type="text" id="name" class="form-control" required placeholder="Enter your Fullname">
             </div>
           </div>
           <div class="col-md-12">
             <div class="mb-3">
-              <input type="email" class="form-control" required placeholder="Enter your Email">
+              <input type="email" id="email" class="form-control" required placeholder="Enter your Email">
             </div>
           </div>
           <div class="col-md-12">
             <div class="mb-3">
-              <textarea rows="3" required class="form-control" placeholder="Your Questions Here"></textarea>
+              <textarea rows="3" id="quest" required class="form-control" placeholder="Your Questions Here"></textarea>
           </div>
         </div>
-        <button class="btn text-center p-3 mb-2 bg-primary-subtle text-emphasis-primary">Send Here</button>
+        <button onclick="myFunction2()"
+        class="btn text-center p-3 mb-2 bg-primary-subtle text-emphasis-primary">Send Here</button>
     
           </div>
         </div> 
@@ -396,6 +399,37 @@
   <p class="text-center text-body-secondary">© 2023 For Educational Purpose Only</p>
 </footer>
 
+
+<script>
+  function myFunction2(){
+
+    var name =document.getElementById("name");
+    var email =document.getElementById("email");
+    var quest =document.getElementById("quest");
+    const sym = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+
+    var named=name.value;
+    var emaild=email.value;
+    var questd=quest.value;
+
+    if (named === "" && emaild === "" && questd === "") {
+        alert("Please fill the required fields.");   
+        }    
+        else if(sym.test(emaild) && questd != "" && named != "" ) {
+        alert("We have received your questions. We will respond to you as soon as we have completed our review.")
+        } else if(sym.test(emaild) && quest === "") {
+        alert("Please enter your questions.")
+        }
+        else{
+          alert("Please fill the required fields.")
+        }
+      }
+
+
+
+
+      
+</script>
 
 
 

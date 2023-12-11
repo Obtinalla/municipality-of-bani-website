@@ -46,6 +46,8 @@
         </div>
       </nav>
       <br> <br>
+      
+
 
       <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
         <div class="col-md-6 p-lg-5 mx-auto my-5">
@@ -203,20 +205,21 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="mb-3">
-                  <input type="text" class="form-control" required placeholder="Enter your Fullname">
+                  <input type="text" id="name" class="form-control" required placeholder="Enter your Fullname">
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="mb-3">
-                  <input type="email" class="form-control" required placeholder="Enter your Email">
+                  <input type="email" id="email" class="form-control" required placeholder="Enter your Email">
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="mb-3">
-                  <textarea rows="3" required class="form-control" placeholder="Your Questions Here"></textarea>
+                  <textarea rows="3" id="quest" required class="form-control" placeholder="Your Questions Here"></textarea>
               </div>
             </div>
-            <button class="btn text-center p-3 mb-2 bg-primary-subtle text-emphasis-primary">Send Here</button>
+            <button onclick="myFunction2()"
+            class="btn text-center p-3 mb-2 bg-primary-subtle text-emphasis-primary">Send Here</button>
         
               </div>
             </div> 
@@ -235,7 +238,36 @@
       <p class="text-center text-body-secondary">© 2023 For Educational Purpose Only</p>
     </footer>
     
+    <script>
+      function myFunction2(){
     
+        var name =document.getElementById("name");
+        var email =document.getElementById("email");
+        var quest =document.getElementById("quest");
+        const sym = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+    
+        var named=name.value;
+        var emaild=email.value;
+        var questd=quest.value;
+    
+        if (named === "" && emaild === "" && questd === "") {
+            alert("Please fill the required fields.");   
+            }    
+            else if(sym.test(emaild) && questd != "" && named != "" ) {
+            alert("We have received your questions. We will respond to you as soon as we have completed our review.")
+            } else if(sym.test(emaild) && quest === "") {
+            alert("Please enter your questions.")
+            }
+            else{
+              alert("Please fill the required fields.")
+            }
+          }
+    
+    
+    
+    
+          
+    </script>
     
 
 
